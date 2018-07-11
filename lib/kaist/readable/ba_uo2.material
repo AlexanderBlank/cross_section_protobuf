@@ -1,0 +1,120 @@
+full_name: "BA + UO2"
+abbreviation: "ba_uo2"
+id: "ba_uo2"
+number_of_groups: 7
+thermal_groups: 4
+vector_property {
+  id: ENERGY_GROUPS
+  value: 20000000.0
+  value: 1353000.0
+  value: 9119.0
+  value: 3.928
+  value: 0.6251
+  value: 0.1457
+  value: 0.05692
+  value: 0.0
+}
+vector_property {
+  id: SIGMA_T
+  value: 0.11169
+  value: 0.288
+  value: 0.46751
+  value: 0.51798
+  value: 1.1197
+  value: 1.9228
+  value: 2.7912
+}
+vector_property {
+  id: SIGMA_A
+  value: 0.0040654
+  value: 0.0019608
+  value: 0.038476
+  value: 0.075614
+  value: 0.44591
+  value: 0.79017
+  value: 0.79129
+}
+vector_property {
+  id: CHI
+  value: 0.59252
+  value: 0.40714
+  value: 0.00033193
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+}
+vector_property {
+  id: NU_SIG_F
+  value: 0.0094204
+  value: 0.00027952
+  value: 0.0024007
+  value: 0.0041753
+  value: 0.010575
+  value: 0.0025478
+  value: 0.0011354
+}
+vector_property {
+  id: KAPPA_SIG_F
+  value: 1.1514e-13
+  value: 3.6915e-15
+  value: 3.1983e-14
+  value: 5.5625e-14
+  value: 1.4088e-13
+  value: 3.3943e-14
+  value: 1.5126e-14
+}
+matrix_property {
+  id: SIGMA_S
+  rows: 7
+  cols: 7
+  value: 0.12072999999999999
+  value: 0.067414
+  value: 0.00029327
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.42841
+  value: 0.052027
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.7457600000000001
+  value: 0.049128
+  value: 0.0069058999999999995
+  value: 0.0012497
+  value: 0.00077157
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.54667
+  value: 0.20345
+  value: 0.027968
+  value: 0.012506
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.005507
+  value: 0.7312
+  value: 0.23885
+  value: 0.076688
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.1912
+  value: 1.0426
+  value: 0.35786999999999997
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.085355
+  value: 0.567
+  value: 1.7744
+}

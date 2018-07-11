@@ -1,14 +1,15 @@
 # takes an XML file as command line argument 1 and a path (default .) as arg 2
-# converts XML file to serialized material property file
+# converts XML file to human-readable material property file defined by material.proto
 # made from "XML Conversion.ipynb"
 # assumes protoc has already been called
 # usage example:
-# ls ../lib/kaist/xml/*.xml | xargs -I '{}' python3 XML_To_Material.py '{}' ../lib/kaist/serialized/
+# ls ../lib/kaist/xml/*.xml | xargs -I '{}' python3 XML_To_Material.py '{}' ../lib/kaist/readable/
 
 import sys
 import os
 import xml.etree.cElementTree as ET
 import proto.material_pb2 as mat_proto
+from google.protobuf import text_format
 
 def XML_To_Material(inputFilename):
 	data = {}
@@ -27,6 +28,8 @@ def XML_To_Material(inputFilename):
 	        data.update({"chi": [float(v) for v in el.text.split(',')]})
 	    elif el.tag == "energy_groups":
 	        data.update({"energy_groups": [float(v) for v in el.text.split(',')]})
+	    elif el.tag == "g_thermal":
+	    	data.update({"thermal_groups": int(el.text)})
 	    elif el.tag == "xsec":
 	        xsec_root = el
 
@@ -36,6 +39,8 @@ def XML_To_Material(inputFilename):
 	    else:
 	        data.update({el.tag: [float(v) for v in el.text.split(',')]})
 
+	rows = sig_s_root.text.count(';') + 1
+	cols = sig_s_root.text.split(';')[0].count(',') + 1
 	#flatten matrix to 1D
 	data.update({"sig_s": [float(v) for v in sig_s_root.text.replace('\n\t','').replace(';',',').split(',')]})
 
@@ -44,6 +49,11 @@ def XML_To_Material(inputFilename):
 	material.full_name = data["name"]
 	material.id = data["id"]
 	material.abbreviation = data["id"]
+
+	if "n" in grp_structs[0].attrib:
+		material.number_of_groups = int(grp_structs[0].attrib["n"])
+	if "thermal_groups" in data:
+		material.thermal_groups = data["thermal_groups"]
 
 	key_map = {"energy_groups": mat_proto.Material.ENERGY_GROUPS,
 	          "sig_t": mat_proto.Material.SIGMA_T,
@@ -65,6 +75,8 @@ def XML_To_Material(inputFilename):
 	sig_s_matrix = mat_proto.Material.MatrixProperty()
 	sig_s_matrix.id = mat_proto.Material.SIGMA_S
 	sig_s_matrix.value.extend(data["sig_s"])
+	sig_s_matrix.rows = rows
+	sig_s_matrix.cols = cols
 
 	material.matrix_property.extend([sig_s_matrix])
 
@@ -89,8 +101,8 @@ def main():
 
 	material = XML_To_Material(inFile)
 
-	f = open(outFile, 'wb')
-	f.write(material.SerializeToString())
+	f = open(outFile, 'w') #use 'wb' for binary serialized format
+	f.write(text_format.MessageToString(material))
 	f.close()
 
 	print("done writing " + outFile)

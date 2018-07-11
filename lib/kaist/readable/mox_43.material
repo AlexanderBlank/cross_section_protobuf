@@ -1,0 +1,120 @@
+full_name: "MOX 4.3% fuel cell"
+abbreviation: "mox_43"
+id: "mox_43"
+number_of_groups: 7
+thermal_groups: 4
+vector_property {
+  id: ENERGY_GROUPS
+  value: 20000000.0
+  value: 1353000.0
+  value: 9119.0
+  value: 3.928
+  value: 0.6251
+  value: 0.1457
+  value: 0.05692
+  value: 0.0
+}
+vector_property {
+  id: SIGMA_T
+  value: 0.11138
+  value: 0.28877
+  value: 0.45729
+  value: 0.53274
+  value: 0.90384
+  value: 1.1005
+  value: 1.7947
+}
+vector_property {
+  id: SIGMA_A
+  value: 0.0050426
+  value: 0.0021681
+  value: 0.028977
+  value: 0.081058
+  value: 0.25755
+  value: 0.19108
+  value: 0.25788
+}
+vector_property {
+  id: CHI
+  value: 0.59252
+  value: 0.40714
+  value: 0.00033193
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+}
+vector_property {
+  id: NU_SIG_F
+  value: 0.012518
+  value: 0.0014658
+  value: 0.016839
+  value: 0.018197
+  value: 0.41095
+  value: 0.30865
+  value: 0.41538
+}
+vector_property {
+  id: KAPPA_SIG_F
+  value: 1.4909e-13
+  value: 1.7179e-14
+  value: 1.9912e-13
+  value: 2.1544e-13
+  value: 4.8571e-12
+  value: 3.6406e-12
+  value: 4.8994e-12
+}
+matrix_property {
+  id: SIGMA_S
+  rows: 7
+  cols: 7
+  value: 0.12243
+  value: 0.066798
+  value: 0.0002876
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.42991999999999997
+  value: 0.05167000000000001
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.74384
+  value: 0.048864
+  value: 0.0068762
+  value: 0.0012444
+  value: 0.00076826
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.55655
+  value: 0.2021
+  value: 0.027888
+  value: 0.01247
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0056438999999999994
+  value: 0.6948300000000001
+  value: 0.22239
+  value: 0.070212
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.14599
+  value: 0.8277899999999999
+  value: 0.26358000000000004
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.0
+  value: 0.06152899999999999
+  value: 0.42473999999999995
+  value: 1.3572
+}
